@@ -1,4 +1,4 @@
-# WeatherInfo
+<!-- # WeatherInfo
 
 To start your Phoenix server:
 
@@ -15,5 +15,5 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Official website: https://www.phoenixframework.org/
   * Guides: https://hexdocs.pm/phoenix/overview.html
   * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+  * Forum: https://elixirforum.com/c/phoenix-forum5
+  * Source: https://github.com/phoenixframework/phoenix -->
