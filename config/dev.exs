@@ -2,10 +2,11 @@ use Mix.Config
 
 # Configure your database
 config :weather_info, WeatherInfo.Repo,
-  username: "worker_plinio",
-  password: "Bittorio123!",
-  database: "le2t_db",
+  username: "docker",
+  password: "docker",
+  database: "weather_info",
   hostname: "localhost",
+  port: 5433,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 

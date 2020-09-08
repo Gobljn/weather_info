@@ -1,20 +1,18 @@
 defmodule WeatherInfo.Fetcher do
   use Tesla, only: [:get]
 
+  alias WeatherInfo.Weather
+
   plug Tesla.Middleware.BaseUrl, "https://api.openweathermap.org"
   plug Tesla.Middleware.JSON
 
-  def get_current_data(%{city: city}) do
+  def get_data(%{city: city}) do
     {:ok, response} =
       get("/data/2.5/weather",
         query: [q: city, appid: "6f7ada94800f9eeb89afbbe3f7a89ff4", units: "metric"]
       )
-    new_data = transform_data response.body
-    IO.inspect("#{inspect new_data}")
+    response.body
   end
-
-  # LEARN: where put alias?
-  alias WeatherInfo.Weather
 
   defp transform_data(%{} = data) do
     %Weather{
