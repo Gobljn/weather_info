@@ -9,9 +9,15 @@ defmodule WeatherInfo.Fetcher do
   def get_data(%{city: city}) do
     {:ok, response} =
       get("/data/2.5/weather",
-        query: [q: city, appid: "6f7ada94800f9eeb89afbbe3f7a89ff4", units: "metric"]
+        query: [q: city, appid: api_key(), units: "metric"]
       )
+
     response.body
+  end
+
+  defp api_key() do
+    Application.fetch_env!(:weather_info, :openweather_credentials)
+    |> Keyword.fetch!(:api_key)
   end
 
   defp transform_data(%{} = data) do
