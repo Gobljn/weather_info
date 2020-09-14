@@ -29,3 +29,6 @@ weather_info-*.tar
 
 # Ignore .env file that contains the enviroment variables of openweather API
 .env
+
+# Ignore secret files
+*.secret.exs

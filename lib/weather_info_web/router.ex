@@ -5,8 +5,17 @@ defmodule WeatherInfoWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", WeatherInfoWeb do
+  scope "/api/v1", WeatherInfoWeb.Api.V1, as: :api_v1 do
     pipe_through :api
+
+    scope "/current", Current, as: :current do
+      resources "/city", RealTimeController, as: :time, only: [:show]
+    end
+
+    # Here will be the router path for forecast operations.
+    # scope "/forecast", WeatherInfoWeb.Forecast, as: forecast do
+
+    # end
   end
 
   # Enables LiveDashboard only for development

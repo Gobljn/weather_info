@@ -25,5 +25,4 @@ config :logger, level: :warn
 # Use mock adapter for all clients
 config :tesla, adapter: Tesla.Mock
 
-config :weather_info, :openweather_credentials,
-  api_key: "fake_api_key"
+config :weather_info, :openweather_credentials, api_key: "fake_api_key"
